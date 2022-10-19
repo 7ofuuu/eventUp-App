@@ -6,7 +6,11 @@ module.exports = {
         "./resources/**/*.vue",
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                kuning: "#ffde59",
+            },
+        },
     },
     plugins: [require("flowbite/plugin")],
 };
