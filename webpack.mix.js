@@ -13,8 +13,4 @@ const mix = require("laravel-mix");
 
 mix.js("resources/js/app.js", "public/js")
     .postCss("resources/css/app.css", "public/css", [require("tailwindcss")])
-    .copy("node_modules/flowbite/dist/flowbite.js", "public/js/app.js")
-    .copy("node_modules/slick-1.8.1/slick/slick.js", "public/js/app.js")
-    .copy("node_modules/slick-1.8.1/slick/slick.css", "public/css/app.css");
-
-// mix.copyDirectory("node_modules/flowbite/dist/flowbite.js", "public/js");
+    .copy("node_modules/flowbite/dist/flowbite.js", "public/js/app.js");
