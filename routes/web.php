@@ -25,6 +25,12 @@ Route::get('/about', function () {
     ]);
 });
 
+Route::get('/event', function () {
+    return view('event', [
+        "title"=>"Event"
+    ]);
+});
+
 Route::get('/FAQ', function () {
     return view('faq', [
         "title"=>"FAQ"
