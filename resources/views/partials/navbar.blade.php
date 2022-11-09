@@ -134,7 +134,7 @@
 </nav> --}}
 
 
-<nav class="fixed top-0 w-full bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded drop-shadow-md z-50 dark:bg-gray-900 md:w-full">
+<nav class="fixed top-0 w-full bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded drop-shadow-md z-50 dark:bg-gray-900 md:w-full {{ ($title === "Login") ? 'hidden ' : 'inline' }}">
     <div class="container grid grid-cols-3 mx-auto">
         <a href="/" class="flex items-center">
             {{-- <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"> --}}

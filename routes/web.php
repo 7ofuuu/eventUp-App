@@ -19,20 +19,20 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/about', function () {
-    return view('about', [
-        "title"=>"About"
-    ]);
-});
-
 Route::get('/event', function () {
     return view('event', [
         "title"=>"Event"
     ]);
 });
 
-Route::get('/FAQ', function () {
-    return view('faq', [
-        "title"=>"FAQ"
+Route::get('/about', function () {
+    return view('about', [
+        "title"=>"About"
+    ]);
+});
+
+Route::get('/login', function () {
+    return view('loginpage', [
+        "title"=>"Login"
     ]);
 });

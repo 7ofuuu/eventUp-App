@@ -10,7 +10,7 @@
             <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">Building digital <br>products & brands.</h1>
             <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">This free and open-source landing page template was built using the utility classes from <a href="https://tailwindcss.com" class="hover:underline">Tailwind CSS</a> and based on the components from the <a href="https://flowbite.com/docs/getting-started/introduction/" class="hover:underline">Flowbite Library</a> and the <a href="https://flowbite.com/blocks/" class="hover:underline">Blocks System</a>.</p>
             <div class="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
-                <a href="/" class="relative px-6 py-3 font-bold text-black group z-0">
+                <a href="/login" class="relative px-6 py-3 font-bold text-black group z-0">
                     <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-kuning-900 group-hover:translate-x-0 group-hover:translate-y-0"></span>
                     <span class="absolute inset-0 w-full h-full border-4 border-black"></span>
                     <span class="relative">Getting Started</span>
@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-            <img src="{{ asset("img/landing-page-hero-2.svg") }}" alt="hero image">
+            <img src="{{ asset("img/landing-page-hero-3.svg") }}" alt="hero image">
         </div>                
     </div>
 </section>
