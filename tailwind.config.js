@@ -32,7 +32,10 @@ module.exports = {
                 // ?? warna pelengkap
                 biru: "#599bff",
                 salmon: "#ff6a59",
-                insignia: "#32435a",
+                "insignia-300": "#adb3bd",
+                "insignia-700": "#5a687a",
+                "insignia-800": "#46556a",
+                "insignia-900": "#32435a",
                 "steel-blue": "#4682B4",
             },
             fontFamily: {

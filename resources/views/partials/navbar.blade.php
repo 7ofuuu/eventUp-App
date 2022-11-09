@@ -152,7 +152,7 @@
             <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
             <span class="sr-only">Search icon</span>
             </div>
-            <input type="text" id="search-navbar" class="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-insignia focus:border-insignia dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-insignia dark:focus:border-insignia md:w-72" placeholder="Search Event...">
+            <input type="text" id="search-navbar" class="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-insignia-900 focus:border-insignia-900 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-insignia-900 dark:focus:border-insignia-900 md:w-72" placeholder="Search Event...">
         </div>
         <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
             <span class="sr-only">Open menu</span>
@@ -168,16 +168,16 @@
         </div>
         <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:ml-16 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
           <li>
-            <a href="/" class="block py-2 pr-4 pl-3 font-inter font-semibold text-[15px] text-gray-400 rounded hover:bg-gray-100 md:bg-transparent md:hover:bg-transparent md:hover:text-insignia md:p-0 dark:text-white {{ ($title === "Home") ? 'text-insignia underline underline-offset-3 decoration-[3px] decoration-kuning-900 ' : '' }}" aria-current="page">Home</a>
+            <a href="/" class="block py-2 pr-4 pl-3 font-inter font-semibold text-[15px] text-gray-400 rounded hover:bg-gray-100 md:bg-transparent md:hover:bg-transparent md:hover:text-insignia-900 md:p-0 dark:text-white {{ ($title === "Home") ? 'text-insignia-900 underline underline-offset-3 decoration-[3px] decoration-kuning-900 ' : '' }}" aria-current="page">Home</a>
           </li>
           <li>
-            <a href="/event" class="block py-2 pr-4 pl-3 font-inter font-semibold text-[15px] text-gray-400 rounded hover:bg-gray-100 md:bg-transparent md:hover:bg-transparent md:hover:text-insignia md:p-0 dark:text-white {{ ($title === "Event") ? 'text-insignia underline underline-offset-3 decoration-[3px] decoration-kuning-900 ' : '' }}" aria-current="page">Event</a>
+            <a href="/event" class="block py-2 pr-4 pl-3 font-inter font-semibold text-[15px] text-gray-400 rounded hover:bg-gray-100 md:bg-transparent md:hover:bg-transparent md:hover:text-insignia-900 md:p-0 dark:text-white {{ ($title === "Event") ? 'text-insignia-900 underline underline-offset-3 decoration-[3px] decoration-kuning-900 ' : '' }}" aria-current="page">Event</a>
           </li>
           <li>
-            <a href="/about" class="block py-2 pr-4 pl-3 font-inter font-semibold text-[15px] text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-insignia md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 {{ ($title === "About") ? 'text-insignia underline underline-offset-2 decoration-2 ' : '' }}">About</a>
+            <a href="/about" class="block py-2 pr-4 pl-3 font-inter font-semibold text-[15px] text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-insignia-900 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 {{ ($title === "About") ? 'text-insignia-900 underline underline-offset-2 decoration-2 ' : '' }}">About</a>
           </li>
           <li>
-            <a href="#" class="block py-2 pr-4 pl-3 font-inter font-semibold text-[15px] text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-insignia md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+            <a href="#" class="block py-2 pr-4 pl-3 font-inter font-semibold text-[15px] text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-insignia-900 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
           </li>
         </ul>
       </div>
