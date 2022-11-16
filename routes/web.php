@@ -31,8 +31,14 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/login', function () {
+Route::get('/signin', function () {
     return view('loginpage', [
-        "title"=>"Login"
+        "title"=>"SignIn"
+    ]);
+});
+
+Route::get('/signup', function () {
+    return view('signuppage', [
+        "title"=>"SignUp"
     ]);
 });
