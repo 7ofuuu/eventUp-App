@@ -1631,10 +1631,6 @@ input[type="range"]::-ms-fill-lower {
   --tw-text-opacity: 1;
   color: rgb(255 189 89 / var(--tw-text-opacity));
 }
-.text-blue-600 {
-  --tw-text-opacity: 1;
-  color: rgb(28 100 242 / var(--tw-text-opacity));
-}
 .underline {
   text-decoration-line: underline;
 }
@@ -1653,9 +1649,6 @@ input[type="range"]::-ms-fill-lower {
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-.accent-insignia-900 {
-  accent-color: #32435a;
 }
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -1776,6 +1769,10 @@ input[type="range"]::-ms-fill-lower {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(50 67 90 / var(--tw-ring-opacity));
 }
+.focus\:ring-insignia-300:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(173 179 189 / var(--tw-ring-opacity));
+}
 .focus\:ring-primary-300:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(147 197 253 / var(--tw-ring-opacity));
@@ -1795,10 +1792,6 @@ input[type="range"]::-ms-fill-lower {
 .focus\:ring-blue-500:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(63 131 248 / var(--tw-ring-opacity));
-}
-.focus\:ring-insignia-300:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(173 179 189 / var(--tw-ring-opacity));
 }
 .active\:text-red-500:active {
   --tw-text-opacity: 1;
@@ -2015,10 +2008,6 @@ input[type="range"]::-ms-fill-lower {
 .dark .dark\:focus\:ring-insignia-900:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(50 67 90 / var(--tw-ring-opacity));
-}
-.dark .dark\:focus\:ring-blue-600:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(28 100 242 / var(--tw-ring-opacity));
 }
 .dark .group:hover .dark\:group-hover\:bg-gray-800\/60 {
   background-color: rgb(31 41 55 / 0.6);
