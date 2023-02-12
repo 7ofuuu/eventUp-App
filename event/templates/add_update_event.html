@@ -1,0 +1,83 @@
+{% extends "base.html" %}{% load staticfiles %}{% block head_title %}Add Event | {{ block.super }}{% endblock %}
+{% block content %}
+    <div class="p-3 pt-4 bg-white rounded shadow-sm">
+        <h2>Add/Update Event</h2>
+        <form enctype="multipart/form-data" action="" method="post" class="px-md-2">{% csrf_token %}
+            <h3>Informasi Event*</h3>
+            <div class="form-row px-md-5">
+                {{ form.media }}
+                <div class="pb-4 col-md-4"><label>Pilih Tipe Event:</label>{{ form.tipe_event }}{{ form.tipe_event.errors }}</div>
+                <div class="pb-4 col-md-4"><label>Tema Event:</label>{{ form.tema_event }}{{ form.tema_event.errors }}</div>
+                <div class="pb-4 col-md-4"><label>Biaya Pendaftaran:</label>{{ form.biaya }}{{ form.biaya.errors }}</div>
+                <div class="pb-4 col-md-8"><label>Nama Event</label>{{ form.nama_event }}{{ form.nama_event.errors }}
+                </div>
+                <div class="pb-4 col-md-4"><label>Nama Penyelenggara</label>{{ form.penyelenggara }}{{ form.penyelenggara.errors }}
+                </div>
+                <div class="col-md-4"><label>Durasi</label>
+                    <div class="row">
+                        <div class="pb-4 col-md-7">{{ form.nomor_durasi }}
+                            <span style="color:red;">{{ form.nomor_durasi.errors }}</span></div>
+                        <div class="pb-4 col-md-5">{{ form.jenis_durasi }}{{ form.jenis_durasi.errors }}</div>
+                    </div>
+                </div>
+                <div class="pb-4 col-md-4">
+                    <label>Tanggal Awal Pendaftaran</label>{{ form.tanggal_awal_pendaftaran }}{{ form.tanggal_awal_pendaftaran.errors }}
+                </div>
+                <div class="pb-4 col-md-4">
+                    <label>Tanggal Akhir Pendaftaran</label>{{ form.tanggal_akhir_pendaftaran }}{{ form.tanggal_akhir_pendaftaran.errors }}
+                </div>
+                <div class="pb-4 col-md-4">
+                    <label>Tanggal Event</label>{{ form.tanggal_event }}{{ form.tanggal_event.errors }}
+                </div>
+                <div class="pb-4 col-md-12">Jurusan yang diperbolehkan{% for radio in form.jurusan_eligible %}
+                    <div class="pl-sm-4 pl-2 form-check form-check-inline">{{ radio }}</div>
+                {% endfor %}{{ form.jurusan_eligible.errors }}</div>
+                <div class="pb-4 col-md-12">Angkatan yang diperbolehkan{% for radio in form.angkatan_eligible %}
+                    <div class="pl-sm-4 pl-2 form-check form-check-inline">{{ radio }}</div>
+                {% endfor %}{{ form.angkatan_eligible.errors }}</div>
+                <div class="pb-4 col-md-12"><label>Alumni diperbolehkan?</label>
+                    {% for radio in form.alumni %}
+                        <div class="pl-sm-4 pl-2 form-check form-check-inline">{{ radio }}</div>
+                    {% endfor %}{{ form.alumni.errors }}</div>
+                <div class="pb-4 col-md-12"><label>Pendaftaran diperlukan?</label>
+                    {% for radio in form.membutuhkan_pendaftaran %}
+                        <div class="pl-sm-4 pl-2 form-check form-check-inline">{{ radio }}</div>
+                    {% endfor %}{{ form.membutuhkan_pendaftaran.errors }}</div>
+                <div class="pb-4 col-md-8"><label>Venue:</label>{{ form.venue }}{{ form.venue.errors }}</div>
+                <div class="pb-4 col-md-4"><label>Logo Event: (200X200 image file)</label>{{ form.event_pic }}{{ form.event_pic.errors }}</div>
+                <div class="pb-4 col-md-4"><label>Banner Event: (9:16 image file)</label>{{ form.event_banner }}{{ form.event_banner.errors }}</div>
+                <div class="pb-4 col-md-4"><label>Benefit Peserta 1:</label>{{ form.benefit_event_1 }}{{ form.benefit_event_1.errors }}</div>
+                <div class="pb-4 col-md-4"><label>Benefit Peserta 2 (Opsional):</label>{{ form.benefit_event_2 }}{{ form.benefit_event_2.errors }}</div>
+                <div class="pb-4 col-md-4"><label>Benefit Peserta 3 (Opsional):</label>{{ form.benefit_event_3 }}{{ form.benefit_event_3.errors }}</div>
+                <div class="pb-4 col-md-4"><label>Benefit Peserta 4 (Opsional):</label>{{ form.benefit_event_4 }}{{ form.benefit_event_4.errors }}</div>
+                <div class="pb-4 col-md-4"><label>Benefit Peserta 5 (Opsional):</label>{{ form.benefit_event_5 }}{{ form.benefit_event_5.errors }}</div>
+                <div class="pb-4 col-md-4"><label>Benefit Peserta 6 (Opsional):</label>{{ form.benefit_event_6 }}{{ form.benefit_event_6.errors }}</div>
+                <div class="pb-4 col-md-4"><label>Persyaratan 1:</label>{{ form.persyaratan_1 }}{{ form.persyaratan_1.errors }}</div>
+                <div class="pb-4 col-md-4"><label>Persyaratan 2 (Opsional):</label>{{ form.persyaratan_2 }}{{ form.persyaratan_2.errors }}</div>
+                <div class="pb-4 col-md-4"><label>Persyaratan 3 (Opsional):</label>{{ form.persyaratan_3 }}{{ form.persyaratan_3.errors }}</div>
+                <div class="pb-4 col-md-4"><label>Persyaratan 4 (Opsional):</label>{{ form.persyaratan_4 }}{{ form.persyaratan_4.errors }}</div>
+                <div class="pb-4 col-md-4"><label>Persyaratan 5 (Opsional):</label>{{ form.persyaratan_5 }}{{ form.persyaratan_5.errors }}</div>
+                <div class="pb-4 col-md-4"><label>Persyaratan 6 (Opsional):</label>{{ form.persyaratan_6 }}{{ form.persyaratan_6.errors }}</div>
+                <div class="pb-4 col-md-12"><label>Deskripsi</label>{{ form.deskripsi }}{{ form.deskripsi.errors }}</div>
+                
+                <div class="pb-4 col-md-6"><label>Detail Tautan Lanjutan 1:</label>{{ form.tautan_detail_1 }}{{ form.tautan_detail_1.errors }}</div>
+                <div class="pb-4 col-md-6"><label>Tautan Lanjutan 1:</label>{{ form.tautan_lanjutan_1 }}{{ form.tautan_lanjutan_1.errors }}</div>
+
+                <div class="pb-4 col-md-6"><label>Detail Tautan Lanjutan 2 (Opsional):</label>{{ form.tautan_detail_2 }}{{ form.tautan_detail_2.errors }}</div>
+                <div class="pb-4 col-md-6"><label>Tautan Lanjutan 2 (Opsional):</label>{{ form.tautan_lanjutan_2 }}{{ form.tautan_lanjutan_2.errors }}</div>
+
+                <div class="pb-4 col-md-6"><label>Detail Tautan Lanjutan 3 (Opsional)</label>{{ form.tautan_detail_3 }}{{ form.tautan_detail_3.errors }}</div>
+                <div class="pb-4 col-md-6"><label>Tautan Lanjutan 3 (Opsional):</label>{{ form.tautan_lanjutan_3 }}{{ form.tautan_lanjutan_3.errors }}</div>
+                
+                <div class="pb-4 col-md-7"><label>Kontak Person:</label>{{ form.narahubung }}{{ form.narahubung.errors }}</div>
+                <div class="pb-4 col-md-5">
+                    <label>Foto Kontak Person: (500X500 image file)</label>{{ form.narahubung_pic }}{{ form.narahubung_pic.errors }}</div>
+                <div class="pb-4 col-md-12"><label>Info Kontak Person:</label>{{ form.narahubung_desc }}{{ form.narahubung_desc.errors }}</div>
+{#            {{ form.as_p }}#}
+            </div>
+            <div class="px-md-5 pb-5 btn-toolbar">
+                <button type="submit" class="px-5 m-2 btn btn-outline-primary">Submit</button>
+                <button type="reset" class="px-4 m-2 btn btn-outline-danger">Reset</button>
+            </div>
+        </form>
+    </div>{% endblock %}

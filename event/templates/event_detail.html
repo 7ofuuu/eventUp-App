@@ -1,0 +1,112 @@
+{% extends 'base.html' %}{% load staticfiles %}{% block head_title %}Event Detail | {{ block.super }}{% endblock %}
+<main>{% block content %}</main>
+    <div class="bg-blue pt-4" style="margin-top: -32px">
+        <div class="container pt-md-4 text-md-left text-center">
+            <div class="d-flex flex-md-row flex-column">
+                <img src="/media/{{ obj.event_pic }}" alt="logo" class="mb-3" style="height: 100px; margin: auto; margin-top: 0">
+                <div class="flex-md-grow-1 text-white px-3 mb-3">
+                    <h1 class="mb-3">{{ obj.nama_event }}</h1>{% if owner %}
+                    <a class="btn btn-custom mb-4" style="border: 2px solid #ffffff; padding: .4rem 4rem;" href="{% url 'event:update_event' obj.slug %}">Update Event</a>{% elif registered %}
+                    <button class="btn btn-custom mb-4" style="border: 2px solid #ffffff; padding: .4rem 4rem;" disabled>Sudah Terdaftar</button>
+                    {% else %}{% if now <= obj.tanggal_akhir_pendaftaran and obj.tanggal_awal_pendaftaran %}
+                        <a class="btn btn-custom mb-4" style="border: 2px solid #ffffff; padding: .4rem 4rem;" onclick='return confirm("Are you sure to register in {{ obj.nama_event }}")' href="{% url 'registration:register_event' obj %}">Register Now</a>{% else %}
+                        <button class="btn btn-custom mb-4" style="border: 2px solid #ffffff; padding: .4rem 4rem;" disabled>Pendaftaran Ditutup</button>{% endif %}{% endif %}
+                    <p>Tanggal akhir pendaftaran: {{ obj.tanggal_akhir_pendaftaran }}</p>
+                </div>
+                <div class="text-white mb-3 col-lg-3" style="margin: auto">
+                    <p>Biaya: <span style="font-size: 40px">Rp {{ obj.biaya }}</span></p>
+                    <p>Tanggal Event: {{ obj.tanggal_event }}</p>
+                </div>
+            </div>
+            <div id="demo" class="collapse">
+                <div class="px-3 px-md-5 text-white">
+                    {# <p class="mb-4">Jelajahi event seru di sekolahmu bersama EventUp</p>#}
+                    <ul>
+                        <li class="mb-2">Tanggal Pendaftaran: {{ obj.tanggal_awal_pendaftaran }}</li>
+                        <li class="mb-2">Jurusan yang diperbolehkan : {{ obj.jurusan_eligible }}</li>
+                        <li class="mb-2">Angkatan yang diperbolehkan : {{ obj.angkatan_eligible }}</li>
+                        <li class="mb-2">Alumni SMKN 4 Bandung 
+                            {% if obj.alumni == 1 %}diperbolehkan mendaftar{% else %}tidak diperbolehkan mendaftar{% endif %}</li>
+                        <li class="mb-2">Venue: {{ obj.venue }}</li>
+                    </ul>
+                    <p>Durasi: {{ obj.nomor_durasi }} {{ obj.jenis_durasi }}</p>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <button class="btn text-white" data-toggle="collapse" data-target="#demo" style="border-radius: 50%!important;height: 95px;font-size: small; margin-bottom: -45px; background-color: rgba(0, 183, 209, 1); background-image: linear-gradient(rgba(0, 183, 209, 1), rgba(20, 146, 230, 1));">Tunjukkan Detail<br><span style="font-size: x-large; line-height: 0;margin-bottom: -3px">&#8744;</span>
+            </button>
+        </div>
+    </div>
+    <div class="container text-center pb-5">
+        <h2 class="mt-5">Deskripsi Event</h2>
+        <hr style="width: 110px; border: 1px solid rgba(0,0,0,0.62);">
+        <div class="p-4 p-md-5 mt-5" style="border: 2px solid grey; border-radius: 2rem; text-align: initial">
+            {{ obj.deskripsi|safe }}
+        </div>
+    </div>
+    <div class="container mt-5 p-4">
+        <hr style="width: 70%; border-top: 4px solid #1492E6; border-radius: 50rem">
+
+        <div class="d-flex justify-content-md-between flex-md-row flex-column">
+            <div class="text-center align-self-center pb-3"><h2>Persyaratan Pendaftar</h2>
+                <hr style="width: 110px; border: 1px solid rgba(0,0,0,0.62);">
+                <div style="border-left: 2px solid grey;border-right: 2px solid grey;border-radius: 50rem; width: 432px;padding: 20px 0">
+                    <p>{{ obj.persyaratan_1 }}</p>
+                    <p>{{ obj.persyaratan_2 }}</p>
+                    <p>{{ obj.persyaratan_3 }}</p>
+                    <p>{{ obj.persyaratan_4 }}</p>
+                    <p>{{ obj.persyaratan_5 }}</p>
+                    <p>{{ obj.persyaratan_6 }}</p></div>
+            </div>
+            <div class="text-center align-self-center pb-3"><h2>Benefit untuk Peserta</h2>
+                <hr style="width: 110px; border: 1px solid rgba(0,0,0,0.62);">
+                <div style="border-left: 2px solid grey;border-right: 2px solid grey;border-bottom: 2px solid grey; border-radius: 2rem; width: 350px; padding: 20px">
+                    <p>{{ obj.benefit_event_1 }}</p>
+                    <p>{{ obj.benefit_event_2 }}</p>
+                    <p>{{ obj.benefit_event_3 }}</p>
+                    <p>{{ obj.benefit_event_4 }}</p>
+                    <p>{{ obj.benefit_event_5 }}</p>
+                    <p>{{ obj.benefit_event_6 }}</p></div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container text-center pb-5">
+        <hr style="width: 70%; border-top: 4px solid #1492E6; border-radius: 50rem">
+        <h2 class="mt-5">Course Content</h2>
+        <hr style="width: 110px; border: 1px solid rgba(0,0,0,0.62);">
+        <div class="p-4 p-md-5 mt-5" style="border: 2px solid grey; border-radius: 2rem; text-align: initial">
+            {{ obj.description|safe }}
+        </div>
+    </div> -->
+    <div class="container text-center pb-3">
+        <hr style="width: 70%; border-top: 4px solid #1492E6; border-radius: 50rem">
+        <h2 class="mt-5">Info Kontak Person</h2>
+        <hr style="width: 110px; border: 1px solid rgba(0,0,0,0.62);">
+        <div class="p-4" style="text-align: initial">
+            <h2>{{ obj.narahubung }}</h2>
+            {{ obj.narahubung_desc|safe }}
+        </div>
+    </div>
+    
+    <div>
+        Yang perlu dimasukan:
+        event_banner
+        <img src="/media/{{ obj.event_banner }}" style="width: 500px; margin: auto">
+
+        Penyelenggara: <p>{{ obj.penyelenggara }}</p>
+
+        Tautan Eksternal & Detail
+        <p>{{ obj.tautan_detail_1 }} : {{ obj.tautan_lanjutan_1 }}</p>
+        <p>{{ obj.tautan_detail_2 }} : {{ obj.tautan_lanjutan_2 }}</p>
+        <p>{{ obj.tautan_detail_3 }} : {{ obj.tautan_lanjutan_3 }}</p>
+
+        narahubung_pic
+        <img src="/media/{{ obj.narahubung_pic }}" style="height: 100px; margin: auto">
+
+        Pendaftaran dibutuhkan: <p>{{ obj.membutuhkan_pendaftaran }}</p>
+
+
+
+    </div>{% endblock content %}
+

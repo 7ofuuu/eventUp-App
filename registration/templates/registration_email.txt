@@ -1,0 +1,32 @@
+{% autoescape off %}
+Dear {{ user.first_name }},
+
+Salam dari EventUp SMK Negeri 4 Bandung
+
+Terima kasih telah mendaftar di event "{{ event.nama_event }}". Semoga kamu punya pengalaman dan aktivitas seru selama kegiatannya yaa.
+
+Event ini akan berlangsung pada {{ event.tanggal_event }}. Kehadiran dan partisipasimu akan sangat dibutuhkan.
+
+Berikut merupakan detail dari eventnya:
+
+Nama : {{ event.nama_event }}
+Durasi : {{ event.nomor_durasi }} {{ event.jenis_durasi }}
+Venue: {{ event.venue }}
+Nama Kontak Person : {{ event.narahubung }}
+
+
+Sekali lagi, terima kasih ya telah mendaftar. Have a nice day:)
+
+#PlatformCanggihYangBikinKamuGakNolepLagi
+
+--
+Regards
+EventUp Team
+PKK XII RPL 2 2022/2023 - Teenify Schola Solutia
+
+Jika kamu punya pertanyaan, hubungi kami di
+Email {{ email }}
+Phone No. {{ number }}
+
+*Email ini otomatis terkirim dari http://{{ domain }} karena seseorang mencoba mendaftar menggunakan emailmu.
+{% endautoescape %}

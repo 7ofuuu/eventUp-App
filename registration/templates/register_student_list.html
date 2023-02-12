@@ -1,0 +1,44 @@
+{% extends "base.html" %}{% load staticfiles %}{% block head_title %}List Pendaftar | {{ block.super }}{% endblock %}
+{% block css %}{% endblock %}
+{% block content %}
+    <div class="bg-white pb-4 px-md-5 px-2 rounded shadow-sm">
+        <div class="pt-4 d-flex justify-content-between"><h2>List Siswa Terdaftar</h2>
+            <div style="width: 300px">
+                <input type="text" class="form-control" id="search" onkeyup="mySearch123456()" placeholder="Search...">
+            </div>
+        </div>
+        <div class="py-3 pb-2 table-responsive-xl">{% if obj %}
+            <table class="table table-bordered table-hover" id="myTable">
+                <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Nama Siswa</th>
+                    <th>Email Siswa</th>
+                    <th>Nomor Induk Siswa</th>
+                    <th>Detail Pembayaran</th>
+                    <th>Jumlah Pembayaran</th>
+                    <th>Sisa Pembayaran</th>
+                    <th>Tambah Pembayaran</th>
+                </tr>
+                </thead>
+                <tbody>{% for i in obj %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ i.student.user.first_name }} {{ i.student.user.last_name }}</td>
+                        <td>{{ i.student.user.email }}</td>
+                        <td>{{ i.student.nis }}</td>
+                        <td>
+                            <a href="{% url 'registration:registration_detail' i.registration_id %}">{{ i.registration_id }}</a>
+                        </td>
+                        <td>{{ i.jumlah_pembayaran }}</td>
+                        <td>{{ i.balance }}</td>
+                        <td><a href="{% url 'registration:registration_detail' i.registration_id %}#transaction"
+                               class="btn btn-outline-success btn-sm">Tambah Pembayaran</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>{% else %}<h3>Belum ada siswa yang terdaftar saat ini!</h3>{% endif %}
+        </div>
+    </div>
+{% endblock %}
+{% block script %}{% endblock %}

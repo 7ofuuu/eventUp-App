@@ -1,0 +1,76 @@
+{% extends "base.html" %}{% load staticfiles %}
+{% block head_title %}Detail Registrasi | {{ block.super }}{% endblock %}{% block css %}{% endblock %}
+{% block content %}
+    <div class="px-3 pt-4 pb-5 bg-white rounded shadow-sm">
+        <h2>Informasi Event</h2>
+        <div class="px-3">
+            <h4>Kode & Nama Event</h4>
+            <p class="lead px-3"><strong>{{ obj.event }}</strong>, {{ obj.event.nama_event }}</p>
+            <hr>
+            <h4>Tanggal</h4>
+            <p class="px-3">{{ obj.event.tanggal_event|date:"F d, Y" }}</p>
+            <hr>
+            <h4>Biaya Event</h4>
+            <p class="px-3">{{ obj.event.biaya }}</p>
+            <hr>
+        </div>{% if staff %}
+        <h2>Informasi Siswa</h2>
+        <div class="px-3">
+            <h4>Name</h4>
+            <p class="lead px-3">{{ obj.student.user.first_name }} {{ obj.student.user.last_name }}</p>
+            <hr>
+            <h4>Email</h4>
+            <p class="px-3">{{ obj.student.user.email }}</p>
+            <hr>
+            <h4>Nomor Induk Siswa</h4>
+            <p class="px-3">{{ obj.student.nis }}</p>
+            <hr>
+            <h4>Jurusan</h4>
+            <p class="px-3">{{ obj.student.jurusan }}, {{ obj.student.tahun_masuk }}-{{ obj.student.tahun_lulus }}</p>
+            <hr>
+            <h4>Nomor Kontak</h4>
+            <p class="px-3">{{ obj.student.telepon }}</p>
+            <hr>
+        </div>{% endif %}
+        <div class="px-4 table-responsive-xl">
+            <h2>Detail Transaksi</h2>{% if obj.transaction_id.all %}
+            <table class="table table-bordered table-hover" id="myTable">
+                <thead>
+                <tr style="font-weight: 600;">
+                    <th scope="col">#</th>
+                    <th scope="col">ID Registrasi</th>
+                    <th scope="col">ID Transaksi</th>
+                    <th scope="col">Jumlah Pembayaran</th>
+                    <th scope="col">Detail Bayar</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">User</th>
+                </thead>
+                <tbody>{% for name in obj.transaction_id.all %}
+                    <tr>
+                        <td scope="row">{{ forloop.counter }}</td>
+                        <td>{{ obj.registration_id }}</td>
+                        <td>{{ name.transaction_id }}</td>
+                        <td>{{ name.jumlah_pembayaran }}</td>
+                        <td>{{ name.detail_bayar }}</td>
+                        <td>{{ name.timestamp }}</td>
+                        <td>{{ name.user }}</td>
+                    </tr>{% endfor %}</tbody>
+            </table>
+            <h2 class="py-3">Total Pembayaran: {{ obj.jumlah_pembayaran }}</h2>{% else %}
+            <h2 class="text-danger">Tidak ada Transaksi saat ini</h2>{% endif %}
+            <hr>
+        </div>{% if staff %}
+        <form action="" method="post" class="px-md-5" id="transaction">{% csrf_token %}
+            <h3>Buat Transaksi Baru</h3>
+            <div class="col-md-5 p-2">Jumlah Pembayaran: {{ form.jumlah_pembayaran }}</div>
+            <div class="col-md-5 p-2">Detail Bayar: {{ form.detail_bayar }}</div>
+            <div class="col-md-5 p-2">
+                <button type="submit" class="btn btn-outline-primary btn-sm m-2 px-md-4">Update</button>
+                <button type="reset" class="btn btn-outline-danger btn-sm m-2">Reset</button>
+                <a href="{% url 'registration:register_student_list' obj.event %}"
+                   class="btn btn-sm btn-outline-info px-5 m-2 float-right">Back</a>
+            </div>
+        </form>{% endif %}
+    </div>
+{% endblock %}
+{% block script %}{% endblock %}

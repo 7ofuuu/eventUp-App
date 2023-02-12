@@ -1,0 +1,24 @@
+{% autoescape off %}
+Dear {{ user.first_name }},
+
+Selamat datang di website EventUp SMKN 4 Bandung!
+
+Sebelum masuk, klik tautan dibawah ya buat aktivasi akun kamu. 
+
+http://{{ domain }}{% url 'account:activate' uidb64=uid token=token %}
+
+Selamat bergabung di EventUp, have a nice day yaa:)
+
+#PlatformCanggihYangBikinKamuGakNolepLagi
+
+--
+Regards
+EventUp Team
+PKK XII RPL 2 2022/2023 - Teenify Schola Solutia
+
+Jika kamu punya pertanyaan, hubungi kami di
+Email {{ email }}
+Phone No. {{ number }}
+
+*Email ini otomatis terkirim dari http://{{ domain }} karena seseorang mencoba mendaftar menggunakan emailmu.
+{% endautoescape %}

@@ -1,0 +1,70 @@
+{% extends "base.html" %}{% load staticfiles %}{% block head_title %}Consolidated View | {{ block.super }}{% endblock %}
+{% block css %}{% endblock %}{% block content %}
+    <main role="main" class="container p-4 mt-md-4 mt-2 mb-5">{% if user.is_superuser %}
+        <div class="pb-4">Tema Event:
+            <a href="{% url 'account:consolidated_view_all' %}" class="btn btn-sm btn-outline-primary m-2" style="min-width: 50px;" title="All Event">All</a>
+            <a href="{% url 'account:consolidated_tema_event' tema_event='Workshop' %}" class="btn btn-sm btn-outline-primary m-2" style="min-width: 50px;" title="Workshop">Workshop</a>
+            <a href="{% url 'account:consolidated_tema_event' tema_event='Kompetisi' %}" class="btn btn-sm btn-outline-primary m-2" style="min-width: 50px;" title="Kompetisi">Kompetisi</a>
+            <a href="{% url 'account:consolidated_tema_event' tema_event='Pelatihan' %}" class="btn btn-sm btn-outline-primary m-2" style="min-width: 50px;" title="Pelatihan">Pelatihan</a>
+            <a href="{% url 'account:consolidated_tema_event' tema_event='PORAK' %}" class="btn btn-sm btn-outline-primary m-2" style="min-width: 50px;" title="Pekan Olahraga dan Kesenian Siswa">PORAK</a>
+            <a href="{% url 'account:consolidated_tema_event' tema_event='Kegiatan-Olahraga' %}" class="btn btn-sm btn-outline-primary m-2" style="min-width: 50px;" title="Kegiatan Olahraga">Kegiatan Olahraga</a>
+            <a href="{% url 'account:consolidated_tema_event' tema_event='Hang-Out' %}" class="btn btn-sm btn-outline-primary m-2" style="min-width: 50px;" title="Hang-Out / Main Bareng">Hang-Out</a>
+            <a href="{% url 'account:consolidated_tema_event' tema_event='Travelling' %}" class="btn btn-sm btn-outline-primary m-2" style="min-width: 50px;" title="Travelling">Travelling</a>
+            <a href="{% url 'account:consolidated_tema_event' tema_event='Kegiatan-Alam' %}" class="btn btn-sm btn-outline-primary m-2" style="min-width: 50px;" title="Kegiatan Alam">Kegiatan Alam</a>
+            <a href="{% url 'account:consolidated_tema_event' tema_event='Festival-Musik' %}" class="btn btn-sm btn-outline-primary m-2" style="min-width: 50px;" title="Festival Musik">Festival Musik</a>
+            <a href="{% url 'account:consolidated_tema_event' tema_event='Festival-Anime' %}" class="btn btn-sm btn-outline-primary m-2" style="min-width: 50px;" title="Festival Jepang">Festival Anime</a>
+            <a href="{% url 'account:consolidated_tema_event' tema_event='Kegiatan-Rohis' %}" class="btn btn-sm btn-outline-primary m-2" style="min-width: 50px;" title="Kegiatan Keagamaan Islam">Kegiatan Rohis</a>
+        </div>{% endif %}
+        <div class="card-deck my-4">{% if user.is_staff or user.is_superuser %}{% for event in event_list %}
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header btn-toolbar justify-content-between">
+                    <span class="font-weight-normal text-capitalize">{{ event.tipe_event }}</span>
+                    {% if now <= event.tanggal_akhir_pendaftaran %}<span class="text-success">Active</span>
+                    {% else %}<span class="text-danger">Not Active</span>{% endif %}
+                </div>
+                <div class="card-body">
+                    <p>Nama Event:
+                        <a href="{% url 'event:event_detail' event.slug %}">{{ event.nama_event }}</a><br> Kode Event:
+                        <a href="{% url 'event:event_detail' event.slug %}">{{ event }}</a><br> Tanggal Event:
+                        <span class="text-danger">{{ event.tanggal_event|date:"F d, Y" }}</span><br>Pembuat Event:
+                        {% if user.is_superuser %}<a href="{% url 'account:consolidated_username' event.user %}">
+                        {% endif %}{{ event.user.first_name }} {{ event.user.last_name }}</a></p>
+                    <p>Jumlah siswa terdaftar: {{ event.registered_student }}</p>
+                    <div class="pt-2 btn-toolbar justify-content-between">
+                        <a href="{% url 'registration:register_student_list' event.slug %}">List Pendaftar</a>
+                        <a href="{% url 'registration:print_student_list' event.slug %}">Registrasi Report</a>
+                    </div>
+                    <div class="pt-2 btn-toolbar justify-content-between">
+                        <a href="{% url 'registration:print_transaction_list' event.slug %}">Transaksi Report</a>
+                        <a href="{% url 'registration:print_enroll_list' event.slug %}">Enrollment Report</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="pb-3 px-3 btn-toolbar justify-content-between">
+                    <a href="{% url 'event:update_event' slug=event.slug %}" class="btn btn-outline-primary btn-sm px-4">Update</a>
+                    <a href="{% url 'event:delete_event' slug=event.slug timestamp=event.timestamp %}" class="btn btn-outline-danger btn-sm px-4" onclick="return confirm('Are you sure to Delete {{ event.event_name }} event?')">Delete</a>
+                </div>
+            </div>{% endfor %}{% if not event_list %}
+            <span class="text-danger">Belum ada event disini. Please create a Event</span>{% endif %}{% else %}
+            {% for reg in event_list %}
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header btn-toolbar justify-content-between">
+                        <span class="font-weight-normal text-capitalize">{{ reg.event.tipe_event }}</span>
+                        {% if now <= reg.event.tanggal_akhir_pendaftaran %}<span class="text-success">Active</span>
+                        {% else %}<span class="text-danger">Not Active</span>{% endif %}
+                    </div>
+                    <div class="card-body">
+                        <p>Nama Event: <a href="{% url 'event:event_detail' reg.event %}">{{ reg.event.nama_event }}</a><br> Kode Event:
+                            <a href="{% url 'event:event_detail' reg.event %}">{{ reg.event }}</a><br> Tanggal Event:
+                            <span class="text-danger">{{ reg.event.tanggal_event|date:"F d, Y" }}</span><br> Pembuat Event: {{ reg.event.user.first_name }} {{ reg.event.user.last_name }}
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="pb-3 px-3 btn-toolbar justify-content-between">
+                        <a href="{% url 'event:event_detail' reg.event %}" class="btn btn-outline-primary btn-sm px-4">Detail</a>
+                        <a href="" class="btn btn-outline-danger btn-sm px-4">Feedback</a>
+                    </div>
+                </div>{% endfor %}{% endif %}
+        </div>
+    </main>
+{% endblock %}{% block script %}{% endblock %}
