@@ -34,6 +34,13 @@ python manage.py runserver
 ```
 
 <br>
+Tailwind
+
+```
+npx tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch
+```
+
+<br>
 the passwords of all sample users are:
 
 ```
