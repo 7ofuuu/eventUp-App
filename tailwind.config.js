@@ -7,10 +7,12 @@ module.exports = {
   theme: {
     extend: {},
   },
-  prefix: 'tw-',
-  corePlugins: {
-    preflight: false,},
   plugins: [
     require('flowbite/plugin')
   ],
+  prefix: "tw-",
+  important: true,
+  corePlugins: {
+    preflight: false,
+  }
 }

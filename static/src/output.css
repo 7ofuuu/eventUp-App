@@ -534,6 +534,16 @@ input:checked + .toggle-bg {
   --tw-backdrop-sepia:  ;
 }
 
+.tw-text-3xl {
+  font-size: 1.875rem !important;
+  line-height: 2.25rem !important;
+}
+
+.tw-text-green-800 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(3 84 63 / var(--tw-text-opacity)) !important;
+}
+
 .tw-ring-inset {
-  --tw-ring-inset: inset;
+  --tw-ring-inset: inset !important;
 }
