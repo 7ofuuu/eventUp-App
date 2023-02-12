@@ -1,6 +1,7 @@
 {% extends "base.html" %}{% load staticfiles %}{% block head_title %}Login | {{ block.super }}{% endblock %}
 {% block css %}{% endblock %}{% block content %}
     <main role="main" class="container col-xl-3 col-lg-5 col-md-6 p-4 mt-md-4 mt-2 mb-5" style="background-color: #f7f5f5;box-shadow: 0 0 5px 5px #d4d2cf;border-radius: 5px">
+        <h1 class="tw-text-3xl tw-text-green-800">Teks ini pake style Tailwind</h1>
         <h3 class="text-center pb-3">Login To Your Account</h3>
         <form method="post" id="loginForm">{% csrf_token %}
             <div class="mb-4"><label>Email</label>{{ form.email }}</div>
