@@ -45,6 +45,8 @@ INSTALLED_APPS = [
 
     'ckeditor',
     'ckeditor_uploader',
+
+    'compressor',
 ]
 
 MIDDLEWARE = [
@@ -130,6 +132,13 @@ STATICFILES_DIRS = [
     # '/var/www/static/',
 ]
 # STATIC_ROOT = os.path.join(BASE_DIR,"static/")
+
+# Tailwind compressor config
+COMPRESS_ROOT = os.path.join(BASE_DIR, "static")
+
+COMPRESS_ENABLED = True
+
+STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
 
 # Media File (Image, Video)
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
