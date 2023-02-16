@@ -58,7 +58,9 @@
 
     
 <div id="loading" about="preloader"></div>
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="padding: 0;box-shadow: 0 0.15rem 0.1rem 0 rgba(0,0,0,.05);background-color: white">
+
+<!-- !! navbar start -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="padding: 0;box-shadow: 0 0.15rem 0.1rem 0 rgba(0,0,0,.05);background-color: white">
     <a class="navbar-brand p-0" href="{% url 'home' %}"><img src="{% static 'images/cbselogo.png' %}" style="width: 200px; padding-left: 1rem" alt="CBSE"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span></button>
@@ -84,8 +86,93 @@
             </div>
         </div>
     </div>
+</nav> -->
+
+<!-- ?? New Navbar -->
+
+<nav class="tw-relative tw-px-4 tw-py-4 tw-flex tw-justify-between tw-items-center tw-bg-white tw-shadow-md">
+  <a class="tw-text-3xl tw-font-bold tw-leading-none" href="{% url 'event:event_list' %}">
+    <img src="{% static 'images/web-logo-256.png' %}" alt="eventup-logo" class="tw-h-10">
+  </a>
+  <div class="lg:tw-hidden">
+    <button class="navbar-burger tw-flex tw-items-center tw-text-blue-600 tw-p-3">
+      <svg class="tw-block tw-h-4 tw-w-4 tw-fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <title>Mobile menu</title>
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+      </svg>
+    </button>
+  </div>
+  <ul class="tw-hidden tw-absolute tw-top-1/2 tw-left-1/2 tw-transform -tw-translate-y-1/2 -tw-translate-x-1/2 lg:tw-mx-auto lg:tw-flex lg:tw-items-center lg:tw-w-auto lg:tw-space-x-6">
+    <li><a class="tw-text-sm tw-font-bold hover:tw-underline-offset-4 hover:tw-decoration-2 {% if request.session.head_name == 'home' %}tw-underline tw-decoration-2 tw-underline-offset-4 tw-font-bold tw-text-blue-600{% endif %}" href="{% url 'home' %}">Home</a></li>
+    <li class="tw-text-gray-300">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+      </svg>
+    </li>
+    <li><a class="tw-text-sm tw-font-bold hover:tw-underline-offset-4 hover:tw-decoration-2 {% if request.session.head_name == 'event' %}tw-underline tw-decoration-2 tw-underline-offset-4 tw-font-bold tw-text-blue-600{% endif %}" href="{% url 'event:event_list' %}">Event</a></li>
+    <li class="tw-text-gray-300">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+      </svg>
+    </li>
+    <li><a class="tw-text-sm tw-font-bold hover:tw-underline-offset-4 hover:tw-decoration-2 {% if request.session.head_name == 'news' %}tw-underline tw-decoration-2 tw-underline-offset-4 tw-font-bold tw-text-blue-600{% endif %} " href="{% url 'home' %}">News</a></li>
+    <li class="tw-text-gray-300">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+      </svg>
+    </li>
+    <li><a class="tw-text-sm tw-font-bold hover:tw-underline-offset-4 hover:tw-decoration-2 " href="#">Add Event</a></li>
+    <li class="tw-text-gray-300">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+      </svg>
+    </li>
+    <li><a class="tw-text-sm tw-font-bold hover:tw-underline-offset-4 hover:tw-decoration-2 " href="#">Consolidated View</a></li>
+  </ul>
+  <a class="tw-hidden lg:tw-inline-block lg:tw-ml-auto lg:tw-mr-3 tw-py-2 tw-px-6 tw-bg-gray-50 hover:tw-bg-gray-100 tw-text-sm tw-text-gray-900 tw-font-bold  tw-rounded-xl tw-transition duration-200 tw-no-underline" href="{% url 'account:login' %}">Sign In</a>
+  <a class="tw-hidden lg:tw-inline-block tw-py-2 tw-px-6 tw-bg-blue-500 hover:tw-bg-blue-600 tw-text-sm tw-text-white tw-font-bold tw-rounded-xl tw-transition tw-duration-200 tw-no-underline" href="{% url 'account:signup' %}">Sign up</a>
 </nav>
-<div class="pt-2 mt-2 pt-md-5 mt-md-5">{% for m in messages %}
+<div class="navbar-menu tw-relative tw-z-50 tw-hidden">
+  <div class="navbar-backdrop tw-fixed tw-inset-0 tw-bg-gray-800 tw-opacity-25"></div>
+  <nav class="tw-fixed tw-top-0 tw-left-0 tw-bottom-0 tw-flex tw-flex-col tw-w-5/6 tw-max-w-sm tw-py-6 tw-px-6 tw-bg-white tw-border-r tw-overflow-y-auto">
+    <div class="tw-flex tw-items-center tw-mb-8">
+      <a class="tw-mr-auto tw-text-3xl tw-font-bold tw-leading-none" href="#">
+        <img src="{% static 'images/web-logo-256.png' %}" alt="logo" class="tw-h-10">
+      </a>
+      <button class="navbar-close">
+        <svg class="tw-h-6 tw-w-6 tw-text-gray-400 tw-cursor-pointer hover:tw-text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div>
+      <ul>
+        <li class="tw-mb-1">
+          <a class="tw-block tw-p-4 tw-text-sm tw-font-semibold hover:tw-bg-blue-50 hover:tw-text-blue-600 hover:tw-no-underline tw-rounded {% if request.session.head_name == 'home' %}tw-underline tw-decoration-2 tw-underline-offset-4 tw-font-bold tw-text-blue-600{% endif %}" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="tw-mb-1">
+          <a class="tw-block tw-p-4 tw-text-sm tw-font-semibold hover:tw-bg-blue-50 hover:tw-text-blue-600 hover:tw-no-underline tw-rounded {% if request.session.head_name == 'event' %}tw-underline tw-decoration-2 tw-underline-offset-4 tw-font-bold tw-text-blue-600{% endif %}" href="{% url 'event:event_list' %}">Event</a>
+        </li>
+        <li class="tw-mb-1">
+          <a class="tw-block tw-p-4 tw-text-sm tw-font-semibold hover:tw-bg-blue-50 hover:tw-text-blue-600 hover:tw-no-underline tw-rounded {% if request.session.head_name == 'news' %}tw-underline tw-decoration-2 tw-underline-offset-4 tw-font-bold tw-text-blue-600{% endif %}" href="{% url 'home' %}">News</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="tw-mt-auto">
+      <div class="tw-pt-6">
+        <a class="tw-block tw-px-4 tw-py-3 tw-mb-3 tw-leading-loose tw-text-xs tw-text-center tw-font-semibold tw-bg-gray-50 hover:tw-bg-gray-100 hover:tw-no-underline tw-rounded-xl" href="#">Sign in</a>
+        <a class="tw-block tw-px-4 tw-py-3 tw-mb-2 tw-leading-loose tw-text-xs tw-text-center tw-text-white tw-font-semibold tw-bg-blue-600 hover:tw-bg-blue-700 hover:tw-no-underline  tw-rounded-xl" href="#">Sign Up</a>
+      </div>
+      <p class="tw-my-4 tw-text-xs tw-text-center tw-text-gray-400">
+        <span>Copyright © 2023 Teenify Schola Solutia</span>
+      </p>
+    </div>
+  </nav>
+</div>
+<!-- !! navbar end -->
+
+<div>{% for m in messages %}
     <!-- Alert -->
     <div class="alert alert-dismissible fade show container fit-text mt-4 {% if m.tags == 'success' %}alert-success{% elif m.tags == 'warning' %}alert-warning{% elif m.tags == 'info' %}alert-info{% else %}alert-danger{% endif %}" role="alert">{{ m }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -174,11 +261,13 @@
 <script>
     function preloader() {
         document.getElementById('loading').style.display = 'none';
-    }</script>
+    }
+</script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script src="{% static 'js/search.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
 {% block script %}{% endblock script %}
 </body>
