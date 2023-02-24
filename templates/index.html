@@ -1,6 +1,311 @@
 {% extends "base.html" %}{% load staticfiles %}{% block head_title %}Home | {{ block.super }}{% endblock %}
 {% block content %}
-    <div class="row" style="margin: 1rem 0 0 0">
+        <!-- Start tw-block -->
+
+        <!-- HERO Start-->
+        <section class="tw-bg-white dark:tw-bg-gray-900">
+            <div class="tw-grid tw-max-w-screen-xl tw-px-4 tw-pt-20 tw-pb-8 tw-mx-auto lg:tw-gap-8 xl:tw-gap-0 lg:tw-py-16 lg:tw-grid-cols-12 lg:tw-pt-28">
+                <div class="tw-mr-auto tw-place-self-center lg:tw-col-span-7">
+                    <h1 class="tw-max-w-2xl tw-mb-4 tw-text-4xl tw-font-extrabold tw-leading-none tw-tracking-tight md:tw-text-5xl xl:tw-text-6xl dark:tw-text-white">Platform canggih yang bikin kamu gak nolep lagi.</h1>
+                    <p class="tw-max-w-2xl tw-mb-6 tw-font-light tw-text-gray-500 lg:tw-mb-8 md:tw-text-lg lg:tw-text-xl dark:tw-text-gray-400">Jelajahi aktivitas seru bersama teman-teman baru! Dapatkan pengalaman tak terlupakan dan jalin hubungan sosial yang lebih luas dengan layanan kami. Mulailah sekarang dan buatlah hidupmu lebih mengasyikkan</a>.</p>
+                    <div class="tw-space-y-4 sm:tw-flex sm:tw-space-y-0 sm:tw-space-x-4">
+                        <a href="{% url 'event:event_list' %}" class="tw-no-underline tw-inline-flex tw-items-center tw-justify-center tw-w-full tw-px-5 tw-py-3 tw-text-sm tw-font-medium tw-text-center tw-text-gray-900 tw-border tw-border-gray-200 tw-rounded-lg sm:tw-w-auto hover:tw-bg-gray-100 focus:tw-ring-4 focus:tw-ring-gray-100 dark:tw-text-white dark:tw-border-gray-700 dark:hover:tw-bg-gray-700 dark:focus:tw-ring-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>&nbsp;Telusuri event terdekat
+                        </a> 
+                        <a href="{% url 'home' %}#startexplore" class="tw-no-underline tw-inline-flex tw-items-center tw-justify-center tw-w-full tw-px-5 tw-py-3 tw-mb-2 tw-mr-2 tw-text-sm tw-font-medium tw-text-gray-900 tw-bg-white tw-border tw-border-gray-200 tw-rounded-lg sm:tw-w-auto focus:tw-outline-none hover:tw-bg-gray-100 hover:tw-text-green-700 focus:tw-z-10 focus:tw-ring-4 focus:tw-ring-gray-200 dark:focus:tw-ring-gray-700 dark:tw-bg-gray-800 dark:tw-text-gray-400 dark:tw-border-gray-600 dark:hover:tw-text-white dark:hover:tw-bg-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v13M5 12l7 7 7-7"/></svg>&nbsp;Caritahu cara kerja EventUp
+                        </a>
+                    </div>
+                </div>
+                <div class=" lg:tw-mt-0 lg:tw-col-span-5 lg:tw-flex">
+                    <img src="{% static 'images/asset.png' %}" alt="hero image">
+                </div>                
+            </div>
+        </section>
+        <!-- END HERO -->
+
+
+        <!-- Start tw-block -->
+    <section class="tw-bg-gray-50 dark:tw-bg-gray-800" id="startexplore">
+        <div class="tw-max-w-screen-xl tw-px-4 tw-py-8 tw-mx-auto tw-space-y-12 lg:tw-space-y-20 lg:tw-py-24 lg:tw-px-6">
+            <!-- Row -->
+            <div class="tw-items-center tw-gap-8 lg:tw-grid lg:tw-grid-cols-2 xl:tw-gap-16">
+                <div class="tw-text-gray-500 sm:tw-text-lg dark:tw-text-gray-400">
+                    <h2 class="tw-mb-4 tw-text-3xl tw-font-extrabold tw-tracking-tight tw-text-gray-900 dark:tw-text-white">#1 Daftar dan isi informasi dirimu</h2>
+                    <p class="tw-mb-8 tw-font-light lg:tw-text-xl">Mulailah dengan mendaftarkan diri di platform EventUp guna mendapatkan akses ke semua fitur dan juga newsletter untuk event baru sesuai preferensimu.</p>
+                    <!-- List -->
+                    <ul role="list" class="tw-pt-8 tw-space-y-5 tw-border-t tw-border-gray-200 tw-my-7 dark:tw-border-gray-700">
+                        <li class="tw-flex tw-space-x-3">
+                            <!-- Icon -->
+                            <svg class="tw-flex-shrink-0 tw-w-5 tw-h-5 tw-text-green-700 dark:tw-text-green-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="tw-text-base tw-font-medium tw-leading-tight tw-text-gray-900 dark:tw-text-white">Secure sign-up dengan email aktivasi</span>
+                        </li>
+                        <li class="tw-flex tw-space-x-3">
+                            <!-- Icon -->
+                            <svg class="tw-flex-shrink-0 tw-w-5 tw-h-5 tw-text-green-700 dark:tw-text-green-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="tw-text-base tw-font-medium tw-leading-tight tw-text-gray-900 dark:tw-text-white">Secure login dengan reCAPTCHA v.3</span>
+                        </li>
+                        <li class="tw-flex tw-space-x-3">
+                            <!-- Icon -->
+                            <svg class="tw-flex-shrink-0 tw-w-5 tw-h-5 tw-text-green-700 dark:tw-text-green-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="tw-text-base tw-font-medium tw-leading-tight tw-text-gray-900 dark:tw-text-white">Newsletter untuk setiap event baru</span>
+                        </li>
+                    </ul>
+                    <!-- <p class="tw-mb-8 tw-font-light lg:tw-text-xl"><a href="{% url 'home' %}#step2" class="tw-no-underline tw-inline-flex tw-items-center tw-justify-center tw-w-full tw-px-5 tw-py-3 tw-mb-2 tw-mr-2 tw-text-sm tw-font-medium tw-text-gray-900 tw-bg-white tw-border tw-border-gray-200 tw-rounded-lg sm:tw-w-auto focus:tw-outline-none hover:tw-bg-gray-100 hover:tw-text-green-700 focus:tw-z-10 focus:tw-ring-4 focus:tw-ring-gray-200 dark:focus:tw-ring-gray-700 dark:tw-bg-gray-800 dark:tw-text-gray-400 dark:tw-border-gray-600 dark:hover:tw-text-white dark:hover:tw-bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v13M5 12l7 7 7-7"/></svg>&nbsp;Lanjut ke step#2
+                    </a></p> -->
+                </div>
+                <img class="tw-hidden tw-w-full tw-mb-4 tw-rounded-lg lg:tw-mb-0 lg:tw-flex" src="{% static 'images/step1.jpg' %}" alt="dashboard feature image">
+            </div>
+            <!-- Row -->
+            <div class="tw-items-center tw-gap-8 lg:tw-grid lg:tw-grid-cols-2 xl:tw-gap-16">
+                <img class=" tw-w-full tw-mb-4 tw-rounded-lg lg:tw-mb-0 lg:tw-flex" src="{% static 'images/step2.jpg' %}" alt="feature image 2">
+                <div class="tw-text-gray-500 sm:tw-text-lg dark:tw-text-gray-400">
+                    <h2 class="tw-mb-4 tw-text-3xl tw-font-extrabold tw-tracking-tight tw-text-gray-900 dark:tw-text-white"  id="step2">#2 Eskplor event yang anda minati</h2>
+                    <p class="tw-mb-8 tw-font-light lg:tw-text-xl">Jelajahi seluruh event seru yang ada di platform EventUp dan daftarkan dirimu hanya dengan sekali klik, platform ini kemudian akan mengarahkan kamu untuk menghubungi penyelenggara event untuk koordinasi.</p>
+                    <!-- List -->
+                    <ul role="list" class="tw-pt-8 tw-space-y-5 tw-border-t tw-border-gray-200 tw-my-7 dark:tw-border-gray-700">
+                        <li class="tw-flex tw-space-x-3">
+                            <!-- Icon -->
+                            <svg class="tw-flex-shrink-0 tw-w-5 tw-h-5 tw-text-green-700 dark:tw-text-green-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="tw-text-base tw-font-medium tw-leading-tight tw-text-gray-900 dark:tw-text-white">Eksplor event sesuai preferensimu</span>
+                        </li>
+                        <li class="tw-flex tw-space-x-3">
+                            <!-- Icon -->
+                            <svg class="tw-flex-shrink-0 tw-w-5 tw-h-5 tw-text-green-700 dark:tw-text-green-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="tw-text-base tw-font-medium tw-leading-tight tw-text-gray-900 dark:tw-text-white">Dapatkan informasi detail dari setiap event</span>
+                        </li>
+                        <li class="tw-flex tw-space-x-3">
+                            <!-- Icon -->
+                            <svg class="tw-flex-shrink-0 tw-w-5 tw-h-5 tw-text-green-700 dark:tw-text-green-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="tw-text-base tw-font-medium tw-leading-tight tw-text-gray-900 dark:tw-text-white">Terhubung dengan penyelenggara untuk berkoordinasi</span>
+                        </li>
+                        <li class="tw-flex tw-space-x-3">
+                            <!-- Icon -->
+                            <svg class="tw-flex-shrink-0 tw-w-5 tw-h-5 tw-text-green-700 dark:tw-text-green-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="tw-text-base tw-font-medium tw-leading-tight tw-text-gray-900 dark:tw-text-white">Email pemberitahuan khusus</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Row -->
+            <div class="tw-items-center tw-gap-8 lg:tw-grid lg:tw-grid-cols-2 xl:tw-gap-16">
+                <div class="tw-text-gray-500 sm:tw-text-lg dark:tw-text-gray-400">
+                    <h2 class="tw-mb-4 tw-text-3xl tw-font-extrabold tw-tracking-tight tw-text-gray-900 dark:tw-text-white">#3 Hadiri event dan nikmati momen baru</h2>
+                    <p class="tw-mb-8 tw-font-light lg:tw-text-xl">Perluas jaringan sosialmu di dunia nyata, dan nikmati momen baru bersama teman-teman baru. Platform kami akan memberi informasi terlengkap sebelum kamu menghadirinya.</p>
+                    <!-- List -->
+                    <ul role="list" class="tw-pt-8 tw-space-y-5 tw-border-t tw-border-gray-200 tw-my-7 dark:tw-border-gray-700">
+                        <li class="tw-flex tw-space-x-3">
+                            <!-- Icon -->
+                            <svg class="tw-flex-shrink-0 tw-w-5 tw-h-5 tw-text-green-700 dark:tw-text-green-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="tw-text-base tw-font-medium tw-leading-tight tw-text-gray-900 dark:tw-text-white">Formulir umpan balik</span>
+                        </li>
+                        <li class="tw-flex tw-space-x-3">
+                            <!-- Icon -->
+                            <svg class="tw-flex-shrink-0 tw-w-5 tw-h-5 tw-text-green-700 dark:tw-text-green-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="tw-text-base tw-font-medium tw-leading-tight tw-text-gray-900 dark:tw-text-white">Tracking pembayaran (bila ada)</span>
+                        </li>
+                    </ul>
+                </div>
+                <img class=" tw-w-full tw-mb-4 tw-rounded-lg lg:tw-mb-0 lg:tw-flex" src="{% static 'images/step3.png' %}" alt="dashboard feature image">
+            </div>
+        </div>
+      </section>
+    <!-- End tw-block -->
+
+
+    <!-- Start tw-block -->
+    <section class="tw-bg-gray-50 dark:tw-bg-gray-800">
+        <div class="tw-max-w-screen-xl tw-px-4 tw-py-8 tw-mx-auto tw-text-center lg:tw-py-24 lg:tw-px-6">
+            <figure class="tw-max-w-screen-md tw-mx-auto">
+                <svg class="tw-h-12 tw-mx-auto tw-mb-3 tw-text-gray-400 dark:tw-text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
+                </svg> 
+                <blockquote>
+                    <p class="tw-text-xl tw-font-medium tw-text-gray-900 md:tw-text-2xl dark:tw-text-white">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus vel aliquam totam labore, nihil repudiandae quos cumque voluptates aut maiores doloribus. Eaque ducimus cupiditate quidem. Quos maiores possimus explicabo sit."</p>
+                </blockquote>
+                <figcaption class="tw-flex tw-items-center tw-justify-center tw-mt-6 tw-space-x-3">
+                    <img class="tw-w-6 tw-h-6 tw-rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture">
+                    <div class="tw-flex tw-items-center tw-divide-x-2 tw-divide-gray-500 dark:tw-divide-gray-700">
+                        <div class="tw-pr-3 tw-font-medium tw-text-gray-900 dark:tw-text-white">Lorem</div>
+                        <div class="tw-pl-3 tw-text-sm tw-font-light tw-text-gray-500 dark:tw-text-gray-400">Ipsum dolor sir amet</div>
+                    </div>
+                </figcaption>
+            </figure>
+        </div>
+      </section>
+    <!-- End tw-block -->
+
+
+
+
+    <!-- <section class="tw-bg-white dark:tw-bg-gray-900">
+        <div class="container tw-px-6 tw-py-12 tw-mx-auto">
+            <h1 class="tw-text-2xl tw-font-semibold tw-text-center tw-text-gray-800 lg:tw-text-3xl dark:tw-text-white">Have any Questions?</h1>
+    
+            <div class="tw-mt-8 xl:tw-mt-16 lg:tw-flex lg:tw--mx-12">
+                <div class="lg:tw-mx-12">
+                    <h1 class="tw-text-xl tw-font-semibold tw-text-gray-800 dark:tw-text-white">Table of Content</h1>
+    
+                    <div class="tw-mt-4 tw-space-y-4 lg:tw-mt-8">
+                        <a href="#" class="tw-block tw-text-blue-500 dark:tw-text-blue-400 hover:tw-underline">General</a>
+                        <a href="#" class="tw-block tw-text-gray-500 dark:tw-text-gray-300 hover:tw-underline">Trust & Safety</a>
+                        <a href="#" class="tw-block tw-text-gray-500 dark:tw-text-gray-300 hover:tw-underline">Services</a>
+                        <a href="#" class="tw-block tw-text-gray-500 dark:tw-text-gray-300 hover:tw-underline">Billing</a>
+                        <a href="#" class="tw-block tw-text-gray-500 dark:tw-text-gray-300 hover:tw-underline">Office Cleaning</a>
+                    </div>
+                </div>
+    
+                <div class="tw-flex-1 tw-mt-8 lg:tw-mx-12 lg:tw-mt-0">
+                    <div>
+                        <button class="tw-flex tw-items-center focus:tw-outline-none">
+                            <svg class="tw-flex-shrink-0 tw-w-6 tw-h-6 tw-text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg>
+    
+                            <h1 class="tw-mx-4 tw-text-xl tw-text-gray-700 dark:tw-text-white">How i can play for my appoinment ?</h1>
+                        </button>
+    
+                        <div class="tw-flex tw-mt-8 md:tw-mx-10">
+                            <span class="tw-border tw-border-blue-500"></span>
+    
+                            <p class="tw-max-w-3xl tw-px-4 tw-text-gray-500 dark:tw-text-gray-300">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, eum quae. Harum officiis reprehenderit ex quia ducimus minima id provident molestias optio nam vel, quidem iure voluptatem, repellat et ipsa.
+                            </p>
+                        </div>
+                    </div>
+    
+                    <hr class="tw-my-8 tw-border-gray-200 dark:tw-border-gray-700">
+    
+                    <div>
+                        <button class="tw-flex tw-items-center focus:tw-outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="tw-flex-shrink-0 tw-w-6 tw-h-6 tw-text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                            </svg>
+    
+                            <h1 class="tw-mx-4 tw-text-xl tw-text-gray-700 dark:tw-text-white">What can i expect at my first consultation ?</h1>
+                        </button>
+                    </div>
+    
+                    <hr class="tw-my-8 tw-border-gray-200 dark:tw-border-gray-700">
+    
+                    <div>
+                        <button class="tw-flex tw-items-center focus:tw-outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="tw-flex-shrink-0 tw-w-6 tw-h-6 tw-text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                            </svg>
+    
+                            <h1 class="tw-mx-4 tw-text-xl tw-text-gray-700 dark:tw-text-white">What are your opening house ?</h1>
+                        </button>
+                    </div>
+    
+                    <hr class="tw-my-8 tw-border-gray-200 dark:tw-border-gray-700">
+    
+                    <div>
+                        <button class="tw-flex tw-items-center focus:tw-outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="tw-flex-shrink-0 tw-w-6 tw-h-6 tw-text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                            </svg>
+    
+                            <h1 class="tw-mx-4 tw-text-xl tw-text-gray-700 dark:tw-text-white">Do i need a referral ?</h1>
+                        </button>
+                    </div>
+    
+                    <hr class="tw-my-8 tw-border-gray-200 dark:tw-border-gray-700">
+    
+                    <div>
+                        <button class="tw-flex tw-items-center focus:tw-outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="tw-flex-shrink-0 tw-w-6 tw-h-6 tw-text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                            </svg>
+    
+                            <h1 class="tw-mx-4 tw-text-xl tw-text-gray-700 dark:tw-text-white">Is the cost of the appoinment covered by private health insurance ?</h1>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Start tw-block -->
+    <!-- <section class="tw-bg-white dark:tw-bg-gray-900">
+        <div class="tw-max-w-screen-xl tw-px-4 tw-pb-8 tw-mx-auto lg:tw-pb-24 lg:tw-px-6 ">
+            <h2 class="tw-mb-6 tw-text-3xl tw-font-extrabold tw-tracking-tight tw-text-center tw-text-gray-900 lg:tw-mb-8 lg:tw-text-3xl dark:tw-text-white">Frequently asked questions</h2>
+            <div class="tw-max-w-screen-md tw-mx-auto">
+                <div id="accordion-flush" data-accordion="collapse" data-active-classes="tw-bg-white dark:tw-bg-gray-900 tw-text-gray-900 dark:tw-text-white" data-inactive-classes="tw-text-gray-500 dark:tw-text-gray-400">
+                    <h3 id="accordion-flush-heading-1">
+                        <button type="button" class="tw-flex tw-items-center tw-justify-between tw-w-full tw-py-5 tw-font-medium tw-text-left tw-text-gray-900 tw-bg-white tw-border-b tw-border-gray-200 dark:tw-border-gray-700 dark:tw-bg-gray-900 dark:tw-text-white" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
+                            <span>Can I use Landwind in open-source projects?</span>
+                            <svg data-accordion-icon="" class="tw-w-6 tw-h-6 tw-rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </h3>
+                    <div id="accordion-flush-body-1" class="" aria-labelledby="accordion-flush-heading-1">
+                        <div class="tw-py-5 tw-border-b tw-border-gray-200 dark:tw-border-gray-700">
+                            <p class="tw-mb-2 tw-text-gray-500 dark:tw-text-gray-400">Landwind is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
+                            <p class="tw-text-gray-500 dark:tw-text-gray-400">Check out this guide to learn how to <a href="#" class="tw-text-purple-600 dark:tw-text-green-700 hover:tw-underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
+                        </div>
+                    </div>
+                    <h3 id="accordion-flush-heading-2">
+                        <button type="button" class="tw-flex tw-items-center tw-justify-between tw-w-full tw-py-5 tw-font-medium tw-text-left tw-text-gray-500 tw-border-b tw-border-gray-200 dark:tw-border-gray-700 dark:tw-text-gray-400" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
+                            <span>Is there a Figma file available?</span>
+                            <svg data-accordion-icon="" class="tw-w-6 tw-h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </h3>
+                    <div id="accordion-flush-body-2" class="tw-hidden" aria-labelledby="accordion-flush-heading-2">
+                        <div class="tw-py-5 tw-border-b tw-border-gray-200 dark:tw-border-gray-700">
+                            <p class="tw-mb-2 tw-text-gray-500 dark:tw-text-gray-400">Landwind is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
+                            <p class="tw-text-gray-500 dark:tw-text-gray-400">Check out the <a href="#" class="tw-text-purple-600 dark:tw-text-green-700 hover:tw-underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Landwind.</p>
+                        </div>
+                    </div>
+                    <h3 id="accordion-flush-heading-3">
+                        <button type="button" class="tw-flex tw-items-center tw-justify-between tw-w-full tw-py-5 tw-font-medium tw-text-left tw-text-gray-500 tw-border-b tw-border-gray-200 dark:tw-border-gray-700 dark:tw-text-gray-400" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
+                            <span>What are the differences between Landwind and Tailwind UI?</span>
+                            <svg data-accordion-icon="" class="tw-w-6 tw-h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </h3>
+                    <div id="accordion-flush-body-3" class="tw-hidden" aria-labelledby="accordion-flush-heading-3">
+                        <div class="tw-py-5 tw-border-b tw-border-gray-200 dark:tw-border-gray-700">
+                            <p class="tw-mb-2 tw-text-gray-500 dark:tw-text-gray-400">The main difference is that the core components from Landwind are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Landwind relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.</p>
+                            <p class="tw-mb-2 tw-text-gray-500 dark:tw-text-gray-400">However, we actually recommend using both Landwind, Landwind Pro, and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.</p>
+                            <p class="tw-mb-2 tw-text-gray-500 dark:tw-text-gray-400">Learn more about these technologies:</p>
+                            <ul class="tw-pl-5 tw-text-gray-500 tw-list-disc dark:tw-text-gray-400">
+                                <li><a href="#" class="tw-text-purple-600 dark:tw-text-green-700 hover:tw-underline">Landwind Pro</a></li>
+                                <li><a href="#" class="tw-text-purple-600 dark:tw-text-green-700 hover:tw-underline">Tailwind UI</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3 id="accordion-flush-heading-4">
+                        <button type="button" class="tw-flex tw-items-center tw-justify-between tw-w-full tw-py-5 tw-font-medium tw-text-left tw-text-gray-500 tw-border-b tw-border-gray-200 dark:tw-border-gray-700 dark:tw-text-gray-400" data-accordion-target="#accordion-flush-body-4" aria-expanded="false" aria-controls="accordion-flush-body-4">
+                            <span>What about browser support?</span>
+                            <svg data-accordion-icon="" class="tw-w-6 tw-h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </h3>
+                    <div id="accordion-flush-body-4" class="tw-hidden" aria-labelledby="accordion-flush-heading-4">
+                        <div class="tw-py-5 tw-border-b tw-border-gray-200 dark:tw-border-gray-700">
+                            <p class="tw-mb-2 tw-text-gray-500 dark:tw-text-gray-400">The main difference is that the core components from Landwind are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Landwind relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.</p>
+                            <p class="tw-mb-2 tw-text-gray-500 dark:tw-text-gray-400">However, we actually recommend using both Landwind, Landwind Pro, and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.</p>
+                            <p class="tw-mb-2 tw-text-gray-500 dark:tw-text-gray-400">Learn more about these technologies:</p>
+                            <ul class="tw-pl-5 tw-text-gray-500 tw-list-disc dark:tw-text-gray-400">
+                                <li><a href="#" class="tw-text-purple-600 dark:tw-text-green-700 hover:tw-underline">Landwind Pro</a></li>
+                                <li><a href="#" class="tw-text-purple-600 dark:tw-text-green-700 hover:tw-underline">Tailwind UI</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+            </div>               
+        </div>
+    </section> -->
+    <!-- End tw-block -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="row" style="margin: 1rem 0 0 0">
         <div class="col-lg-6 order-lg-1 pb-5">
             <img src="{% static 'images/Asset 50.svg' %}" alt="logo" style="width: 100%"></div>
         <div class="col-lg-6 order-lg-0 align-self-lg-center px-lg-5 pb-5 text-center">
@@ -14,8 +319,8 @@
             <a class="btn btn-custom mt-4 px-lg-5 py-3" href="{% url 'event:event_detail' event_list.first.slug %}" style="border: 0; font-size: 24px; box-shadow: 5px 5px 10px rgba(0,0,0,.50)!important;">Aku mau ikut event ini!</a><br><br>
             <a href="https://forms.gle/drMJmH39N9zxEjt17">Atau, telusuri event lainnya</a>
         </div>
-    </div>
-    <div class="row mt-lg-3" id="events" style="margin: 0; background-color: #1492E6">
+    </div> -->
+    <!-- <div class="row mt-lg-3" id="events" style="margin: 0; background-color: #1492E6">
         <div class="col-lg-6 order-lg-0" style="padding:0">
             <img src="{% static 'images/Asset 51.svg' %}" alt="logo" style="width: 60%"></div>
         <div class="col-lg-6 order-lg-1 align-self-lg-center px-md-5 px-3 pt-5 text-center">
@@ -36,7 +341,7 @@
         <div class="col-lg-12 pb-5 text-center">
             <a class="btn btn-custom" href="{% url 'event:event_list' %}" style="border: 3px solid #ffffff; padding: .4rem 4rem;">Explore More</a>
         </div>
-    </div>
+    </div> -->
     {#        <div style="background-color: rgb(0,183,209)">#}
     {#        <div class="container pt-5 pb-4">#}
     {#            <h1 style="color: #FFFFFF; font-weight: 100;" class="text-center pb-4">News</h1>#}
@@ -45,4 +350,6 @@
     {#            <div style="color: #FFFFFF; font-size: 90px;" class="text-center">...</div>#}
     {#        </div>#}
     {#    </div>#}
+    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+
 {% endblock %}

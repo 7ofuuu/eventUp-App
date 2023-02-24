@@ -5,6 +5,7 @@ from .views import AddEvent, EventDetail, UpdateEvent, DeleteEvent, EventListVie
 
 urlpatterns = [
     path('', EventListView.as_view(), name='event_list'),
+    path('by-category/<tema_event>', EventListView.as_view(), name='event_tema_event'),
     path('add-event', login_required(AddEvent.as_view()), name='add_event'),
     path('<slug>/event-detail', EventDetail.as_view(), name='event_detail'),
     path('<slug>/update-event', login_required(UpdateEvent.as_view()), name='update_event'),

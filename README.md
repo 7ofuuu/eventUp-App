@@ -11,7 +11,7 @@
 ```cmd
 # clone
 git clone https://github.com/7ofuuu/eventUp-app.git
-git checkout development
+git checkout feature-tailwind
 
 # create and activate virtual environment
 python -m venv venv

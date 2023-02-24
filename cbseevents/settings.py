@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'bootstrap_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,11 +44,10 @@ INSTALLED_APPS = [
     'registration',
     'student',
 
-    'ckeditor',
-    'ckeditor_uploader',
-
     'compressor',
-]
+
+    'ckeditor',
+    'ckeditor_uploader',]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -123,6 +123,18 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Tailwind compressor config
+COMPRESS_ROOT = os.path.join(BASE_DIR, "static")
+
+COMPRESS_ENABLED = True
+
+# STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    'compressor.finders.CompressorFinder',
+)
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
@@ -133,16 +145,10 @@ STATICFILES_DIRS = [
 ]
 # STATIC_ROOT = os.path.join(BASE_DIR,"static/")
 
-# Tailwind compressor config
-COMPRESS_ROOT = os.path.join(BASE_DIR, "static")
-
-COMPRESS_ENABLED = True
-
-STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
-
 # Media File (Image, Video)
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
 
 # Login Path
 
@@ -209,5 +215,7 @@ CKEDITOR_CONFIGS = {
 
 ADMIN_SITE_HEADER = "EventUp"
 ADMIN_SITE_TITLE = "EventUp site admin"
+# BOOTSTRAP_ADMIN_SIDEBAR_MENU = False
+
 
 django_heroku.settings(locals())

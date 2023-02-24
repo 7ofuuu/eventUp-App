@@ -15,9 +15,19 @@ class EventListView(TemplateView):
     template_name = 'event-list.html'
 
     def get(self, request, *args, **kwargs):
-        request.session['head_name'] = 'event'
-        event_list = EventRecord.objects.all().order_by('-tanggal_event')
-        return render(request, self.template_name, {'event_list': event_list})
+        try:
+            tema = 'All'
+            if kwargs.get('tema_event'):
+                tema = kwargs['tema_event']
+                event_list = EventRecord.objects.filter(tema_event=kwargs['tema_event']).order_by('-tanggal_event')
+                print('aa')
+            else:
+                event_list = EventRecord.objects.all().order_by('-tanggal_event')
+            return render(request, self.template_name, {'event_list': event_list, 'now': date.today(), 'tema':tema})
+
+        except ObjectDoesNotExist:
+            messages.error(request, 'Record Not Found')
+            return redirect('home')
 
 
 # noinspection PyBroadException

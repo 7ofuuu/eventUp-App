@@ -16,7 +16,6 @@ urlpatterns = [
     path('delete-user/<username>', login_required(del_user), name='delete_user'),
 
     path('consolidated-view-all', login_required(ConsolidatedView.as_view()), name='consolidated_view_all'),
-    # path('consolidated-view-c_o_e/<c_o_e>', login_required(ConsolidatedView.as_view()), name='consolidated_c_o_e'),
     path('consolidated-view-tema_event/<tema_event>', login_required(ConsolidatedView.as_view()), name='consolidated_tema_event'),
     path('consolidated-view-username/<username>', login_required(ConsolidatedView.as_view()), name='consolidated_username'),
 ]
